@@ -1,0 +1,543 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap");
+
+:root {
+    --ink: #26332d;
+    --muted: #6d746f;
+    --paper: #fbf8f1;
+    --cream: #f2e8d8;
+    --sage: #aabca5;
+    --deep-sage: #4f695a;
+    --terracotta: #b9674d;
+    --line: rgba(38, 51, 45, 0.13);
+    --shadow: 0 18px 50px rgba(59, 48, 37, 0.11);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 92px;
+}
+
+body {
+    min-width: 320px;
+    margin: 0;
+    background:
+        radial-gradient(circle at 15% 8%, rgba(170, 188, 165, 0.35), transparent 24rem),
+        var(--cream);
+    color: var(--ink);
+    font-family: "DM Sans", sans-serif;
+}
+
+.page-header {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 54px 22px 36px;
+    text-align: center;
+}
+
+.eyebrow,
+.day-date,
+.dinner-label {
+    margin: 0;
+    color: var(--terracotta);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.house-mark {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    margin: 18px auto;
+    border: 1px solid var(--deep-sage);
+    border-radius: 50%;
+    place-items: center;
+    font-family: "Playfair Display", serif;
+    font-size: 1.35rem;
+    font-style: italic;
+}
+
+h1,
+h2,
+.dinner-copy h3,
+.breakfast-finale h3 {
+    font-family: "Playfair Display", Georgia, serif;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(2.8rem, 12vw, 4.8rem);
+    letter-spacing: -0.045em;
+    line-height: 0.95;
+}
+
+.subtitle {
+    margin: 20px auto 0;
+    color: var(--muted);
+    font-size: 0.98rem;
+}
+
+.rating {
+    margin-top: 14px;
+    color: var(--terracotta);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+}
+
+.day-nav {
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    display: flex;
+    max-width: 640px;
+    margin: 0 auto 22px;
+    padding: 8px;
+    overflow-x: auto;
+    background: rgba(251, 248, 241, 0.92);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(38, 51, 45, 0.08);
+    backdrop-filter: blur(14px);
+}
+
+.day-nav a {
+    flex: 1 0 58px;
+    padding: 8px 5px;
+    border-radius: 11px;
+    color: var(--muted);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.day-nav a span {
+    display: block;
+    margin-top: 2px;
+    color: var(--ink);
+    font-size: 1rem;
+}
+
+.day-nav a.active,
+.day-nav a:focus-visible {
+    background: var(--deep-sage);
+    color: white;
+    outline: none;
+}
+
+.day-nav a.active span {
+    color: white;
+}
+
+.menu-container {
+    width: min(100% - 24px, 640px);
+    margin: 0 auto;
+}
+
+.day-card {
+    margin-bottom: 22px;
+    padding: 26px 22px;
+    overflow: hidden;
+    background: var(--paper);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 28px;
+    box-shadow: var(--shadow);
+    scroll-margin-top: 92px;
+}
+
+.day-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+}
+
+.day-heading h2 {
+    margin: 6px 0 0;
+    font-size: 2rem;
+    line-height: 1.05;
+}
+
+.day-number {
+    color: rgba(79, 105, 90, 0.24);
+    font-family: "Playfair Display", serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.day-note {
+    margin: 18px 0 0;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.meal-grid,
+.everyday-options {
+    display: grid;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.menu-section {
+    padding: 18px;
+    background: #f4eee3;
+    border-radius: 18px;
+}
+
+.menu-section h3 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+}
+
+.menu-section h3 span {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 3px 7px;
+    background: var(--terracotta);
+    border-radius: 99px;
+    color: white;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    vertical-align: 2px;
+}
+
+.menu-section p,
+.dinner-copy p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+.pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pills li {
+    padding: 6px 9px;
+    background: rgba(170, 188, 165, 0.33);
+    border-radius: 99px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.dinner-feature {
+    margin-top: 18px;
+    overflow: hidden;
+    background: var(--ink);
+    border-radius: 22px;
+    color: white;
+}
+
+.dinner-feature img {
+    display: block;
+    width: 100%;
+    height: 245px;
+    object-fit: cover;
+}
+
+.dinner-copy {
+    padding: 20px;
+}
+
+.dinner-copy .dinner-label {
+    color: #e0aa95;
+}
+
+.dinner-copy h3 {
+    margin: 6px 0 8px;
+    font-size: 1.55rem;
+}
+
+.dinner-copy p {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.restaurant {
+    display: grid;
+    grid-template-columns: 34% 1fr;
+    min-height: 210px;
+    background: var(--terracotta);
+}
+
+.restaurant-art {
+    display: grid;
+    background:
+        repeating-linear-gradient(45deg, transparent 0 12px, rgba(255,255,255,.08) 12px 13px),
+        #9f523d;
+    place-items: center;
+    font-family: "Playfair Display", serif;
+    font-size: 5rem;
+    font-style: italic;
+}
+
+.status {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 7px 10px;
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 99px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+}
+
+.farewell {
+    background: var(--deep-sage);
+    color: white;
+}
+
+.farewell .day-heading {
+    border-color: rgba(255,255,255,.18);
+}
+
+.farewell .day-date {
+    color: #e8c0ae;
+}
+
+.farewell .day-number {
+    color: rgba(255,255,255,.2);
+}
+
+.breakfast-finale {
+    margin-top: 18px;
+    background: rgba(255,255,255,.1);
+}
+
+.breakfast-finale .dinner-label {
+    color: #e8c0ae;
+}
+
+.breakfast-finale h3 {
+    margin: 5px 0 8px;
+    font-size: 1.5rem;
+}
+
+.breakfast-finale p {
+    color: rgba(255,255,255,.75);
+}
+
+.house-bar {
+    width: min(100% - 24px, 640px);
+    margin: 34px auto;
+    padding: 22px;
+    border: 1px dashed var(--deep-sage);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.house-bar p {
+    margin: 4px 0;
+    color: var(--muted);
+    font-size: .85rem;
+}
+
+.house-bar strong {
+    color: var(--ink);
+    font-family: "Playfair Display", serif;
+    font-size: 1.1rem;
+}
+
+.review-card {
+    width: min(100% - 24px, 640px);
+    margin: 0 auto 34px;
+    padding: 28px 22px;
+    background: var(--paper);
+    border-radius: 28px;
+    box-shadow: var(--shadow);
+}
+
+.review-card h2 {
+    margin: 7px 0 10px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 2rem;
+}
+
+.review-intro {
+    margin: 0 0 24px;
+    color: var(--muted);
+    font-size: .9rem;
+    line-height: 1.55;
+}
+
+.review-card form {
+    display: grid;
+    gap: 9px;
+}
+
+.review-card form > label,
+.star-field legend {
+    margin-top: 8px;
+    color: var(--ink);
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+
+.review-card input[type="text"],
+.review-card select,
+.review-card textarea {
+    width: 100%;
+    padding: 13px 14px;
+    background: #f4eee3;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    color: var(--ink);
+    font: inherit;
+    font-size: .9rem;
+}
+
+.review-card textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.review-card input[type="text"]:focus,
+.review-card select:focus,
+.review-card textarea:focus {
+    border-color: var(--deep-sage);
+    outline: 3px solid rgba(79, 105, 90, .14);
+}
+
+.star-field {
+    margin: 0 0 3px;
+    padding: 0;
+    border: 0;
+}
+
+.stars {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    margin-top: 5px;
+}
+
+.stars input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.stars label {
+    padding-right: 5px;
+    color: #d8cfc1;
+    cursor: pointer;
+    font-size: 2rem;
+    line-height: 1;
+    transition: color .15s ease, transform .15s ease;
+}
+
+.stars label:hover,
+.stars label:hover ~ label,
+.stars input:checked ~ label {
+    color: var(--terracotta);
+}
+
+.stars label:hover {
+    transform: translateY(-2px);
+}
+
+.stars input:focus-visible + label {
+    border-radius: 4px;
+    outline: 2px solid var(--deep-sage);
+}
+
+.review-card button {
+    margin-top: 10px;
+    padding: 14px 18px;
+    background: var(--deep-sage);
+    border: 0;
+    border-radius: 13px;
+    color: white;
+    cursor: pointer;
+    font: inherit;
+    font-size: .82rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.review-card button:hover {
+    background: var(--ink);
+}
+
+.form-note {
+    margin: 3px 0 0;
+    color: var(--muted);
+    font-size: .7rem;
+    text-align: center;
+}
+
+.honey-field {
+    position: absolute !important;
+    left: -9999px !important;
+}
+
+footer {
+    padding: 10px 20px 42px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0 0 5px;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+}
+
+footer span {
+    color: var(--muted);
+    font-size: .72rem;
+}
+
+@media (min-width: 560px) {
+    .day-card {
+        padding: 34px;
+    }
+
+    .review-card {
+        padding: 34px;
+    }
+
+    .meal-grid,
+    .everyday-options {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 420px) {
+    .restaurant {
+        grid-template-columns: 1fr;
+    }
+
+    .restaurant-art {
+        min-height: 120px;
+        font-size: 3.5rem;
+    }
+
+    .dinner-feature img {
+        height: 210px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
